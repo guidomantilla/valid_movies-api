@@ -1,0 +1,26 @@
+server:
+  port: 8443
+  compression:
+    enabled: false
+spring:
+  main:
+    banner-mode: off
+    allow-bean-definition-overriding: false
+  application:
+    name: valid_movies-api
+  profiles:
+    active: local
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-value: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmry59I01VicxrlO76Ma6
+          FLZ8JF5gjhP8xiJcdTsmUZjn/SHoiccjygILPbEfIqOqSjixxl0L8Vl6zbffMMoq
+          UBgpFoiATbX/0Y6P2mVwZumIl9qTSWrIqq+ZtPzOA59ercIsj/UBFNs81Z9EMfPr
+          9HFfNltO10RnIKvDc5sd7KTg+ybFyoouK6RkgejrstmTCdV58XearCJwLk5VRKE5
+          6QEBwlz83xJJZ9djBKvQQ5q9p+MTx0gjEthzoYGpQcp9WNaSTPNwpFY3FqKue6tc
+          ylpvSY61cYNTRQN99arSja0ni8fwRHVAMURqStyOm9/XMIqxo7IKc0NLh+HeuLbX
+          kwIDAQAB
+          -----END PUBLIC KEY-----
