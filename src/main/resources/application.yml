@@ -19,7 +19,7 @@ spring:
   profiles:
     active: ${VALID_MOVIES_ENVIRONMENT:dev}
   datasource:
-    url: ${VALID_MOVIES_DATASOURCE_URL:jdbc:mysql://localhost:3308/spring-security?useSSL=false}
+    url: ${VALID_MOVIES_DATASOURCE_URL:jdbc:mysql://localhost:3308/valid-movie-rental?useSSL=false&allowPublicKeyRetrieval=true}
     username: ${VALID_MOVIES_DATASOURCE_USERNAME:root}
     password: ${VALID_MOVIES_DATASOURCE_PASSWORD:v4l1d-gu1d0-m4nt*}
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -28,15 +28,15 @@ spring:
     tomcat:
       test-while-idle: true
       validation-query: SELECT 1
-    jpa:
-      open-in-view: false
-      properties:
-        hibernate:
-          dialect: org.hibernate.dialect.MySQL5Dialect
-          show_sql: false
+  jpa:
+    open-in-view: false
+    properties:
       hibernate:
-        naming:
-          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        show_sql: false
+    hibernate:
+      naming:
+        physical-strategy: valid.movies.api.hibernate.naming.LowerCasePhysicalNamingStrategy
 
 security:
   oauth2:
