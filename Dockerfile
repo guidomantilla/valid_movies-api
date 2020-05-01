@@ -1,10 +1,10 @@
 FROM openjdk:8-jdk-alpine
 
 # Set necessary environment variables needed for our running image
-ENV OAUTH2_AUTH_DATASOURCE_URL='jdbc:mysql://valid_mysql:3306/valid-movie-rental?useSSL=false&allowPublicKeyRetrieval=true' \
-    OAUTH2_AUTH_DATASOURCE_USERNAME='root' \
-    OAUTH2_AUTH_DATASOURCE_PASSWORD='v4l1d-gu1d0-m4nt*' \
-    OAUTH2_AUTH_ENVIRONMENT='dev'
+ENV VALID_MOVIES_DATASOURCE_URL='jdbc:mysql://valid_mysql:3306/valid-movie-rental?useSSL=false&allowPublicKeyRetrieval=true' \
+    VALID_MOVIES_DATASOURCE_USERNAME='root' \
+    VALID_MOVIES_DATASOURCE_PASSWORD='v4l1d-gu1d0-m4nt*' \
+    VALID_MOVIES_ENVIRONMENT='dev'
 
 VOLUME /tmp
 
